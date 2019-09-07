@@ -1,15 +1,15 @@
 var reservation = require("./reservation");
-// var waitListData = require("../waitinglistData");
+var waitlist = require("./waitlist");
 
 // ROUTING
 
 module.exports = function(app) {
-  app.get("/api/tables", function(req, res) {
+  app.get("/api/reservation", function(req, res) {
     res.json(reservation);
   });
 
   app.get("/api/waitlist", function(req, res) {
-    res.json(reservation);
+    res.json(waitlist);
   });
 
   app.post("/api/tables", function(req, res) {
@@ -17,14 +17,14 @@ module.exports = function(app) {
       reservation.push(req.body);
       res.json(true);
     } else {
-      reservation.push(req.body);
+      waitlist.push(req.body);
       res.json(false);
     }
   });
 
   app.post("/api/clear", function() {
     reservation = [];
-    reservation = [];
+    waitlist = [];
 
     console.log(reservation);
   });

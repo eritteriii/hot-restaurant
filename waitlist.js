@@ -1,4 +1,4 @@
-var reservation = [
+var waitlist = [
   {
     routeName: "",
     name: "",
@@ -7,4 +7,4 @@ var reservation = [
   }
 ];
 
-module.exports = reservation;
+module.exports = waitlist;
